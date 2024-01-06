@@ -1,16 +1,22 @@
-premier_nombre = int(input("Entrez un premier nombre : "))
+from tkinter import Tk, Entry, Button, StringVar
 
-deuxieme_nombre = int(input("Entrez un deuxième nombre : "))
+class Calculator:
+    def __init__(self,master):
+        master.title("Calculator")
+        master.geometry('357x420+0+0')
+        master.config(bg='gray')
+        master.resizable(False,False)
+        
+        self.equation = StringVar()
+        self.entry_value = ''
+        Entry(width=17, bg='#fff', font=('Arial Bold', 28), textvariable=self.equation).place(x=0,y=0)
+    
+     
+    
+    
+    
 
-operateur = input("Choisissez un opérateur(+ - * /) : ")
 
-if operateur == "+":
-    print(f"Le résultat de l'addition de {premier_nombre} avec {deuxieme_nombre} est égal à {premier_nombre + deuxieme_nombre} ")
-elif operateur == "-":
-    print(f"Le résultat de la soustraction de {premier_nombre} avec {deuxieme_nombre} est égal à {premier_nombre - deuxieme_nombre} ")
-elif operateur == "*":
-    print(f"Le résultat de la multiplication de {premier_nombre} avec {deuxieme_nombre} est égal à {premier_nombre * deuxieme_nombre} ")
-elif operateur == "/":
-    print(f"Le résultat de la division de {premier_nombre} avec {deuxieme_nombre} est égal à {premier_nombre / deuxieme_nombre} ")
-else:
-    print("Opérateur invalide")
+root=Tk()
+calculator = Calculator(root)
+root.mainloop()
